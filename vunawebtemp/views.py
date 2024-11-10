@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import StreamingHttpResponse
+from .utils import to_async_iterator
 
 
 # Create your views here.
@@ -69,3 +71,5 @@ def book_category(request):
 
 def journals(request):
     return render(request, 'journals.html')
+
+

@@ -23,9 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l(0itbmx*jo20w72ki9^wfn3ayv9)(ut&e@sl#tfqc2c6mu@3g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = [
+    ".vercel.app",  # Allows any subdomain on vercel.app
+    "localhost",
+    "127.0.0.1",
+    os.getenv("CUSTOM_DOMAIN", ""),  # Add your custom domain via environment variable
+]
+
 
 
 # Application definition
